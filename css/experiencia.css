@@ -1,0 +1,113 @@
+.experiencia {
+    max-width: 1200px;
+    padding: 40px 20px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 100px;
+}
+
+.experiencia .subtitulo {
+    color: #e5e5e5
+}
+
+.experiencia-texto {
+    font-size: 1.5rem;
+    line-height: 1.33;
+    max-width: 40ch; /* Limita a quantidade de caracteres */
+    margin-bottom: 60px;
+    color: #525252;
+}
+
+.experiencia-texto strong {
+    color: #141414;
+}
+
+.empresa {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background: #f5f5f5;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 4px;
+    position: relative; /* Com isso a posição do ano se torna relativo a classe pai empresa */
+    gap: 10px 20px;
+}
+
+.empresa::before {
+    content: "";
+    display: block;
+    height: 20px;
+    width: 4px;
+    background: linear-gradient(#b6f829, #67dd0a);
+    position: absolute;
+    top: 20px;
+    left: -4px;
+}
+
+.empresa-ano {
+    position: absolute; /* Para tirar do fluxo do grid / O ano fica com uma referência absoluta, ignorando quanquer outra referência, como por exemplo, Grid */
+    top: 22px;
+    left: -100px;
+    color: #525252;
+    font-size: 0.875rem;
+    text-align: right;
+    width: 80px;
+}
+
+
+.empresa-titulo {
+    font-size: 1.125rem;
+    line-height: 1.1;
+    font-weight: bold;    
+}
+
+.empresa-texto {
+    line-height: 1.4;
+    font-size: .875rem;
+}
+
+.empresa-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-content: start;
+}
+
+.empresa-habilidades li {
+    background: #ffff;
+    padding: 5px 10px;
+    border-radius: 4px;
+    font-size: .875rem;
+    line-height: 1.4;
+}
+
+@media (max-width: 800px) {
+    .experiencia {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+
+    .experiencia .subtitulo {
+        color: #141414;
+    }
+
+    .experiencia-texto {
+        font-size: 1.25rem;
+    }
+
+    .empresa-ano {
+        position: initial;
+        order: 1;
+        width: initial;
+        text-align: left;
+    }
+}
+
+@media (max-width: 450px) { 
+    
+    .empresa {
+        grid-template-columns: 1fr;
+    }
+}
+
